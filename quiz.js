@@ -50,6 +50,8 @@ qIndex = 0;
 correctCount = 0;
 wrongCount = 0;
 total = 0;
+resultScreen.style.display = "none"; 
+gameScreen.style.display = "block"; 
 showQuestion(qIndex);
 }
 resultScreen.style.display = "none";
@@ -69,7 +71,8 @@ const showResult = ()=>{
     Wrong Answers: ${wrongCount};    
     `
     resultScreen.querySelector(".score").textContent = `
-    Score: ${(correctCount - wrongCount) * 10};    
+   Score: ${Math.max((correctCount - wrongCount) * 10, 0)};
+   
     `
      
 }
